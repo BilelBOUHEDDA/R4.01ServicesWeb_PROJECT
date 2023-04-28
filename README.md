@@ -1,4 +1,4 @@
-# src
+# Service de gestion d'images
 
 ## Project setup
 ```
