@@ -5,6 +5,7 @@ const stock = require("../vend/queries")
 const get = (req,res) => {
     pool.query(queries.get, (error, results) => {
         if(error) throw error
+        res.locals.data = results.rows;
         res.status(200).json(results.rows)
     })
 }
@@ -13,6 +14,7 @@ const getInfo = (req,res) => {
     const id = parseInt(req.params.id)
     pool.query(queries.getInfo, [id], (error, results) => {
         if(error) throw error
+        res.locals.data = results.rows;
         res.status(200).json(results.rows)
     })
 }

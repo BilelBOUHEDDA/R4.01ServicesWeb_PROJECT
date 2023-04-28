@@ -4,6 +4,7 @@ const queries = require("./queries.js")
 const get = (req,res) => {
     pool.query(queries.get, (error, results) => {
         if(error) throw error
+        res.locals.data = results.rows;
         res.status(200).json(results.rows)
     })
 }

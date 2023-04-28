@@ -4,6 +4,7 @@ const queries = require("./queries.js")
 const get = (req,res) => {
     pool.query(queries.get, (error, results) => {
         if(error) throw error
+        res.locals.data = results.rows;
         res.status(200).json(results.rows)
     })
 }
@@ -13,11 +14,12 @@ const getUser = (req, res) => {
          pool.query(queries.getById, [id], (error, results) => {
              if (error) throw error
              else if (results.rowCount > 0) {
-                 res.status(200).json(results.rows)
+                res.locals.data = results.rows;
+                res.status(200).json(results.rows)
              
              }
              else {
-                 res.status(400).send("Error not found")
+                res.status(400).send("Error not found")
              }
          })
  }
@@ -26,6 +28,7 @@ const getGuesBook = (req,res) => {
     const id = parseInt(req.params.id)
     pool.query(queries.getGuesBook, [id],(error, results) => {
         if(error) throw error
+        res.locals.data = results.rows;
         res.status(200).json(results.rows)
     })
 }

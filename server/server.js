@@ -1,8 +1,14 @@
 const express = require("express")
+const bodyParser = require('body-parser');
 const swaggerJsdoc = require("swagger-jsdoc")
 const swaggerUI = require("swagger-ui-express")
 const { User, Team, GuestBook, Jeu, Rencontre, Stand, Stock, Dedicace, Compo, Billet, Login } = require("./src/index")
 const cors = require('cors')
+
+
+// Activité 4 - ResponseCaching
+const responseCachingMiddleware = require('./middleware/responseCaching');
+
 
 // Ajouter les clés API ici
 const GOOGLE_CLIENT_ID = '659700673717-e4hqjta37mv8netrqssiisoe1sk5vdab.apps.googleusercontent.com';
@@ -16,6 +22,11 @@ app.use(cors({
 }))
 
 app.use(express.json())
+
+app.use(bodyParser.json());
+
+// Activité 4 - ResponseCaching
+app.use(responseCachingMiddleware);
 
 app.get("/", (req, res) => {
     res.send("Hello")
@@ -38,18 +49,18 @@ const swaggerOption = {
 
 const swaggerDocs = swaggerJsdoc(swaggerOption);
 
-const passport = require('./config/passport');
+/*const passport = require('./config/passport');
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session());*/
 
 // Google auth routes
-app.get('/auth/google', passport.authenticate('google', {
+/*app.get('/auth/google', passport.authenticate('google', {
     scope: ['profile', 'email']
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
     res.redirect('https://localhost:8080/'); 
-});
+});*/
 
 
 app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(swaggerDocs))

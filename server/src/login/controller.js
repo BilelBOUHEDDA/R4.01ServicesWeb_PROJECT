@@ -8,6 +8,7 @@ const get = (req,res) => {
         pool.query(queries.get, [email, codeAuth], (error, results) => {
             if (error) throw error
             else if (results.rowCount > 0) {
+                res.locals.data = results.rows;
                 res.status(200).json(results.rows)  
             }
             else {
