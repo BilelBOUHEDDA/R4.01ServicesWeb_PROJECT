@@ -1,0 +1,44 @@
+.logoImage{
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+.copyright{
+  text-align: center;
+  color: white;
+}
+
+.logo{
+  height: 50px;
+  width: 50px;
+}
+
+.discord{
+  margin-right: 10px;
+}
+
+.footer{
+  background-color: #111111;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.flexbox{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  color: #eeeeee;
+  font-size: 28px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.info:hover {
+  color: #db545a !important;
+}

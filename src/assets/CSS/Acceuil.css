@@ -1,0 +1,243 @@
+video {
+  width: 100%;
+  height: 91vh;
+  object-fit: cover;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+
+.acceuil {
+  background-color: #1c1b1b;
+  color: #ffffff;
+  background-image: none;
+  min-height: auto;
+}
+
+.acceuil::before{
+  content: '';
+  display: table;
+} 
+
+.titre {
+  text-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em rgb(255 255 255), 0 0 0.4em #f7f, 0 0 0.6em #f0f, 0 0 0.8em #f0f, 0 0 1em #f0f, 0 0 1.2em #f0f;
+  color: rgb(247 247 247 / 60%);
+  width: 100%;
+  text-align: center;
+  font-size: 6em;
+  position: absolute;
+  top: 70px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 2em;
+  position: absolute;
+  top: 24em;
+  left: 5em;
+  font-family: "Sofia", sans-serif;
+}
+
+.dateNumero {
+  font-size: 20px;
+}
+
+.international {
+  font-size: 2em;
+    position: absolute;
+    top: 24em;
+    right: 5em;
+    font-family: "Sofia", sans-serif;
+}
+
+.pays {
+  font-size: 20px;
+}
+
+.boutonAcceuil {
+  position: absolute;
+  top: 30em;
+  left: 800px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 100px auto 0;
+  padding: 10px 30px;
+  border-radius: 6px;
+  display: table;
+  text-decoration: none;
+  border: 2px solid;
+  border-style: inset;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  text-align: center;
+}
+
+/* .boutonAcceuil:hover {
+  border-color: #d641b1;
+  color: #d641b1;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+} */
+
+
+.separation {
+  border-style: solid;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+.card {
+  margin:0 auto;
+  width:240px;
+  height:320px;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.card-inner {
+  position:relative;
+  width: 100%;
+  height:100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position:absolute;
+  height:100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding:16px;
+  border-radius:8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-front {
+  background-size:cover;
+  background-position:center center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.card-front-1{
+  background-image:url('/assets/Images/AcceuilImages/fifa23.jpg');
+}
+
+.card-front-2{
+  background-image:url('/assets/Images/AcceuilImages/dota2.jpg');
+}
+
+.card-front-3{
+  background-image:url('/assets/Images/AcceuilImages/csgo.jpg');
+}
+
+.card-front-4{
+  background-image:url('/assets/Images/AcceuilImages/league-of-legend.jpg');
+}
+
+.card-front-5{
+  background-image:url('/assets/Images/AcceuilImages/rocket-league.jpg');
+}
+
+.card-front-6{
+  background-image:url('/assets/Images/AcceuilImages/valorant.jpg');
+}
+
+.card-front:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: linear-gradient(0deg, #2f2f2f, transparent);
+  opacity: 7;
+}
+
+
+.card-back {
+  transform: rotateY(180deg);
+  background: rgb(129,17,29);
+  background: linear-gradient(0deg, rgba(23,45,87,1) 0%, rgba(0,0,0,1) 100%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.card-front {
+  transition: opacity .6s;
+}
+
+.ligne1Accueil, .ligne2Accueil {
+  height: 475px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.description {
+  height: 220px; /* définit une hauteur maximale de 200px pour la balise p */
+  overflow-y: scroll; /* active le scroll vertical lorsque le contenu dépasse la hauteur de 200px */
+  padding-right: 30px;
+} 
+.description::-webkit-scrollbar {
+  width: 5px; 
+}
+
+.description::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: rgb(168,2,20);
+  background: linear-gradient(0deg, rgba(168,2,20,1) 0%, rgba(103,23,124,1) 92%);
+  border-radius: 10px;
+}
+
+.lien {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #00b8d4; /* définit la couleur de fond en bleu clair */
+  border: 2px solid #0052cc; /* ajoute une bordure en bleu foncé */
+}
+
+.logolien{
+  height: 46px;
+  width: 50px;
+  margin-top: 17px;
+}
+
+.carte{
+  height: 700px;
+  width: 100%;
+  filter: blur(10px);
+}
+
+.blockCarte{
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

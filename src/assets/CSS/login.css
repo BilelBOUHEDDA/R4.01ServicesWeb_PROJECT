@@ -1,0 +1,110 @@
+body {
+    background-color: #1c1b1b !important;
+}
+
+.form-row {
+    display: flex;
+    margin: 16px 0px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-row__input {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #f2f2f2;
+    font-weight: 500;
+    font-size: 16px;
+    flex: 1;
+    min-width: 100px;
+    color: black;
+}
+
+.form-row__input::placeholder {
+    color: #aaaaaa;
+}
+
+ *{
+     font-family: 'Poppins', sans-serif;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     
+ }
+
+ .carde {
+    max-width: 100%;
+    width: 540px;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    align-items: center;
+
+ }
+
+ .carde__title {
+     text-align: center;
+     font-weight: 800;
+ }
+
+ .carde__subtitle {
+     text-align: center;
+     color: #666;
+     font-weight: 500;
+ }
+
+ .button {
+     background: #2196F3;
+     color: white;
+     border-radius: 8px;
+     font-weight: 800;
+     font-size: 15px;
+     border: none;
+     width: 100%;
+     padding: 16px;
+     transition: .4s background-color;
+ }
+
+ .carde__action {
+     text-decoration: underline;
+    text-align: center;
+        color: #2196F3;
+        font-weight: 500;
+ }
+
+ .carde__action:hover {
+     cursor: pointer;
+ }
+
+ .button:hover {
+     cursor: pointer;
+     background: #1976D2;
+ }
+
+ .button--disabled {
+     background: #cecece;
+     color: #ececec
+ }
+
+ .button--disabled:hover {
+     cursor: not-allowed;
+     background: #cecece;
+ }
+
+ .conteneur{
+    display: flex;
+    justify-content: center;
+ }
+
+ .button--google {
+    background-color: #4285F4;
+    color: white;
+    margin-top: 10px;
+}
+
+.button--twitter {
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 10px;
+}

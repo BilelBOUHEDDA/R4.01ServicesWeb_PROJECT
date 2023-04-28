@@ -1,0 +1,35 @@
+.navbar {
+  z-index: 10;
+  width: 100%;
+  height: 74px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111111;
+}
+
+
+.bouton{
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: #111111;
+  font-size: x-large;
+  transition: all 0.5s;
+}
+
+.bouton:hover{
+  color: #db545a !important;
+}
+
+.boutonLangue{
+  height: 43px;
+  margin-right: 10px;
+}
+
+.boutonLogo{
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}

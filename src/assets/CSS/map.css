@@ -1,0 +1,286 @@
+.map {
+    background-color: white;
+}
+
+.map__image{
+    position: relative;
+}
+.map__image path{
+    transition: fill 0.3s;
+    stroke:#000000;
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1
+}
+
+.map__image .isActive path{
+    stroke:black;
+    stroke-width:3px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke: opacity 10px;
+}
+
+.map__image #r-PorteO, #r-P1, #r-P2, #r-P3, #r-P4, #r-P5, #r-PH path{
+    fill: rgb(247, 95, 95);
+}
+
+.map__image #r-PorteS, #r-P6, #r-P7 path{
+    fill: rgb(93, 247, 144) ;
+}
+
+.map__image #r-PorteN, #r-P0, #r-P11, #r-P10 path{
+    fill: rgb(68, 141, 224) ;
+}
+
+.map__image #r-PorteE, #r-P9, #r-P8 path{
+    fill: yellow ;
+}
+
+.map__image #r-Hall1, #r-Hall2, #r-Hall3, #r-Hall4, #r-Hall5, #r-Hall6, #r-Hall7 path{
+    fill: rgb(202, 202, 202) ;
+}
+
+.map__image a.isActive#r-PorteO, .map__image a.isActive#r-P1, .map__image a.isActive#r-P2, .map__image a.isActive#r-P3, .map__image a.isActive#r-P4, .map__image a.isActive#r-P5, .map__image a.isActive#r-PH path{
+    fill:rgb(167, 49, 49);
+}
+
+.map__image a.isActive #r-PorteN, .map__image a.isActive#r-P11, .map__image a.isActive#r-P10 path, .map__image a.isActive#r-P0 path{
+    fill:rgb(43, 13, 150);
+}
+
+.map__image a.isActive#r-PorteE, .map__image a.isActive#r-P9, .map__image a.isActive#r-P8 path{
+    fill:orange;
+}
+
+.map__image a.isActive#r-PorteS, .map__image a.isActive#r-P6, .map__image a.isActive#r-P7 path{
+    fill:rgb(28, 104, 34);
+}
+
+.map__image a.isActive#r-Hall1, .map__image a.isActive#r-Hall2, .map__image a.isActive#r-Hall3, .map__image a.isActive#r-Hall4, .map__image a.isActive#r-Hall5, .map__image a.isActive#r-Hall6, .map__image a.isActive#r-Hall7 path{
+    fill:rgb(100, 99, 99);
+}
+
+.active{
+    display: none;   
+}
+
+.toilettes{
+
+    width: 5em;
+    height: 5em;
+}
+
+.toilettes1{
+    z-index: 2;
+    position: absolute;
+    top: 249px;
+    left: 56em;
+}
+
+.toilettes2{
+    z-index: 2;
+    position: absolute;
+    top: 249px;
+    left: 43em;
+}
+
+.toilettes3{
+    z-index: 2;
+    position: absolute;
+    top: 17em; 
+    left: 37em;
+}
+
+.toilettes4{
+    z-index: 2;
+    position: absolute;
+    top: 17em;
+    left: 63em;
+}
+
+.Activtoilettes{
+    z-index: 2;
+    position: absolute;
+    top: 21em;
+    left: 1em;
+}
+
+.Activrestaurant{
+    z-index: 2;
+    position: absolute;
+    top: 28em;
+    left: 1em;
+}
+
+.restaurant1{
+    z-index: 2;
+    position: absolute;
+    top: 23em;
+    left: 68em;
+}
+
+.restaurant2{
+    z-index: 2;
+    position: absolute;
+    top: 23em;
+    left: 34em;
+}
+
+.urgence1{
+    z-index: 2;
+    position: absolute;
+    top: 30em;
+    left: 68em;
+}
+
+.urgence2{
+    z-index: 2;
+    position: absolute;
+    top: 31em;
+    left: 47em;
+}
+
+.Activurgence{
+    z-index: 2;
+    position: absolute;
+    top: 32em;
+    left: 1em;
+}
+
+
+input[type="checkbox"].demo5 {
+    display: none;
+   
+  }
+  input[type="checkbox"].demo5 + label {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    padding:2px;
+    background-color: #c0ceda ;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].demo5 + label::before {
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    height: calc(1.5rem - 4px);
+    width: calc(1.5rem - 4px);
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].demo5:checked + label {
+    background-color: #00B7E8 ;
+  }
+  input[type="checkbox"].demo5:checked + label::before {
+    margin-left: 1.5rem ;
+  }
+
+
+
+
+
+  input[type="checkbox"].demo4 {
+    display: none;
+   
+  }
+  input[type="checkbox"].demo4 + label {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    padding:2px;
+    background-color: #c0ceda ;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].demo4 + label::before {
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    height: calc(1.5rem - 4px);
+    width: calc(1.5rem - 4px);
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].demo4:checked + label {
+    background-color: #00B7E8 ;
+  }
+  input[type="checkbox"].demo4:checked + label::before {
+    margin-left: 1.5rem ;
+  }
+
+
+
+
+
+  input[type="checkbox"].demo3 {
+    display: none;
+   
+  }
+  input[type="checkbox"].demo3 + label {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    padding:2px;
+    background-color: #c0ceda ;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].demo3 + label::before {
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    height: calc(1.5rem - 4px);
+    width: calc(1.5rem - 4px);
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].demo3:checked + label {
+    background-color: #00B7E8 ;
+  }
+  input[type="checkbox"].demo3:checked + label::before {
+    margin-left: 1.5rem ;
+  }
+
+
+.boutonmap{
+    z-index: 2;
+    position: absolute;
+    border-width: 2px;
+    border-style:inset;
+    border-color: black;
+    height: 42em;
+    width: 12em;
+    margin-top: 95px;
+    display: grid;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#TT{
+    top: -90px;
+    position: relative;
+}
+
+.textU{
+    left: -6px;
+}
+
+.textR{
+    left: -10px;
+}
