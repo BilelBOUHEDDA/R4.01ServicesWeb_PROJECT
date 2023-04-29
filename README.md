@@ -6,6 +6,11 @@ npm install
 crée un fichier .env
 ```
 
+### Install autocannon
+```
+npm i autocannon -g
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
