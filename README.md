@@ -3,8 +3,11 @@
 
 ## Description
 ```
-Notre projet consiste en la création d'un site web et d'une application mobile pour l'événement de jeux-vidéo "Lion Esport", une compétition qui propose différents jeux connus tels que League of Legends, Fifa ou encore Counter Strike Global Offensive.
-À ce projet, nous devions donc inclure plusieurs fonctionnalités regroupées en plusieurs activités dont une commune.
+Notre projet consiste en la création d'un site web et d'une application mobile pour l'événement 
+de jeux-vidéo "Lion Esport", une compétition qui propose différents jeux connus tels que 
+League of Legends, Fifa ou encore Counter Strike Global Offensive.
+À ce projet, nous devions donc inclure plusieurs fonctionnalités regroupées en plusieurs 
+activités dont une commune.
 ```
 
 ## Project setup
