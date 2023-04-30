@@ -1,5 +1,11 @@
 # Sockets et Emetteurs
 
+### Node version
+```
+$node -v 
+-> v14.21.1
+```
+
 ## Project setup
 ```
 npm install
@@ -29,8 +35,3 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Node version
-```
-$node -v 
--> v14.21.1
-```
