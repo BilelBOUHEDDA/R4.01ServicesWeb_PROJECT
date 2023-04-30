@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "back": "nodemon ./server/server.js",
+    "socket": "nodemon ./socketio/server.js",
     "serve": "vue-cli-service serve --https",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -23,6 +24,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-twitter": "^1.0.4",
     "postcss-loader": "^7.0.2",
+    "socket.io": "^4.6.1",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.5.0",
     "vue": "^2.6.11",
