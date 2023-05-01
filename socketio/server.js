@@ -2,24 +2,32 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+var axios = require('axios')
+
 
 usernames = [];
 
-app.get('/', function(req, res){
+const axiosagent = axios.create({ baseURL: 'http://localhost:3000/api/' })
+
+app.get('/', async function(req, res){
+    await axiosagent.get(`/users/providers`).then(response => {
+        response.data.forEach(e => usernames.push(e.nom));
+        console.log(usernames);
+    });
     res.sendFile(__dirname + '/index.html');
+    
 });
 
 io.sockets.on('connection', function(socket){
     console.log('Socket Connecté...');
     socket.on('new user', function(data, callback){
-        console.log(pute);
         if(usernames.indexOf(data) != -1){
-            callback(false)
-        } else {
             callback(true);
             socket.username = data;
             usernames.push(socket.username);
             updateUsernames();
+        } else {
+            callback(false);
         }
     });
 

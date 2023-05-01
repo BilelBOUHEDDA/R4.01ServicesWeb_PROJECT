@@ -2,7 +2,6 @@
 node_modules
 /dist
 package-lock.json
-server/config/db.js
 
 # local env files
 .env.local

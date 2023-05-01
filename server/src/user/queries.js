@@ -6,6 +6,7 @@ const put = "UPDATE utilisateur SET nom=$1, email=$2, codePostal=$3, codeAuth=$4
 const del = "DELETE FROM utilisateur WHERE idUtilisateur = $1;"
 
 const getGuesBook = "SELECT * FROM utilisateur u INNER JOIN guestBook g ON u.idUtilisateur=g.idUtilisateur WHERE g.idProvider=$1;"
+const getProvider = "SELECT u.nom FROM utilisateur u INNER JOIN typeUtilisateur t ON u.idType=t.idType WHERE NOT(t.idType=1);"
 
 module.exports = {
     get,
@@ -15,5 +16,6 @@ module.exports = {
     put,
     del,
 
-    getGuesBook
+    getGuesBook,
+    getProvider
 }
