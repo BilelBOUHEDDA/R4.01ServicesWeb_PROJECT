@@ -28,7 +28,8 @@ const post = (req,res) => {
             if (results.rowCount > 0) {
                 return res.status(409).send("User already exist");
             }
-            pool.query(queries.post, [nom, email, codeAuth, idType], (error, results) => {
+            // eslint-disable-next-line no-unused-vars
+            pool.query(queries.post, [nom, email, codeAuth, idType], (error) => {
                 if (error) throw error
                 res.status(200).send("User successfully created")
             })

@@ -1,4 +1,3 @@
-const { Router } = require("express")
 const User = require("./user/routes")
 const Team = require("./team/routes")
 const Billet = require("./billet/routes")

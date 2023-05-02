@@ -1,10 +1,7 @@
-const { Router } = require("express")
 const controller = require("./controller")
 
-const router = Router()
-
-router.get("", controller.get);
-router.post("", controller.post);
-router.put("/:id", controller.put);
-
-module.exports = router
+module.exports = async (fastify) => {
+    fastify.get("", controller.get);
+    fastify.post("", controller.post);
+    fastify.put("/:id", controller.put);
+}

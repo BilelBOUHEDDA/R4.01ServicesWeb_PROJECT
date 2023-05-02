@@ -20,7 +20,8 @@ const post = (req,res) => {
     pool.query(queries.getByPk, [idEmplacement, idEquipeA, idEquipeB, horaire], (error, results) => {
         if(results.rowCount > 0)
             return res.status(409).send("Match already exist")
-        pool.query(queries.post, [idEmplacement, idEquipeA, idEquipeB, horaire], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.post, [idEmplacement, idEquipeA, idEquipeB, horaire], (error) => {
             if(error) throw error
             res.status(200).send("Match successfully created")
         })
@@ -29,7 +30,8 @@ const post = (req,res) => {
 
 const del = (req,res) => {
     const {idEmplacement, idEquipeA, idEquipeB, horaire} = req.body;
-    pool.query(queries.del, [idEmplacement, idEquipeA, idEquipeB, horaire], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.del, [idEmplacement, idEquipeA, idEquipeB, horaire], (error) => {
         if(error) throw error
         res.status(200).send("Match successfully deleted")
     })
@@ -37,7 +39,8 @@ const del = (req,res) => {
 
 const delRelated = (req,res) => {
     const idEquipe = req.params.idTeam;
-    pool.query(queries.delByEquipe, [idEquipe], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.delByEquipe, [idEquipe], (error) => {
         if(error) throw error
         res.status(200).send("Match(s) successfully deleted")
     })

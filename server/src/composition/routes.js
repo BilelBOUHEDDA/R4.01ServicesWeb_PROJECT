@@ -1,14 +1,12 @@
-const { Router } = require("express")
 const controller = require("./controller")
 
-const router = Router()
-
-router.get("", controller.get);
-router.get("/equipes/:idEquipe", controller.getJoueur);
-router.post("", controller.post);
-router.put("/", controller.put);
-router.delete("", controller.del);
-router.delete("/teams/:idEquipe", controller.delEquipe);
-router.delete("/players/:idJoueur", controller.delJoueur);
-
-module.exports = router
+// eslint-disable-next-line no-unused-vars
+module.exports = async (fastify) => {
+    fastify.get("", controller.get);
+    fastify.get("/equipes/:idEquipe", controller.getJoueur);
+    fastify.post("", controller.post);
+    fastify.put("/", controller.put);
+    fastify.delete("", controller.del);
+    fastify.delete("/teams/:idEquipe", controller.delEquipe);
+    fastify.delete("/players/:idJoueur", controller.delJoueur);
+}

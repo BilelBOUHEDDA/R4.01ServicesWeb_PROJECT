@@ -10,6 +10,7 @@ const get = (req,res) => {
 
 const post = (req,res) => {
     const {idUser, idType} = req.body;
+    // eslint-disable-next-line no-unused-vars
     pool.query(queries.post, [idUser, idType], (error, results) => {
         if(error) throw error
         res.status(200).send("Ticket successfully created")
@@ -17,7 +18,7 @@ const post = (req,res) => {
 }
 
 const put = (req,res) => {
-    const {idUser, idType} = req.body;
+    let {idUser, idType} = req.body;
     const id = parseInt(req.params.id)
     pool.query(queries.getById, [id], (error, results) => {
         if(results.rowCount == 0)
@@ -26,6 +27,7 @@ const put = (req,res) => {
         idUser = typeof idUser == 'undefined' ? results.rows[0].iduser : idUser;
         idType = typeof idType == 'undefined' ? results.rows[0].idtype : idType;
 
+        // eslint-disable-next-line no-unused-vars
         pool.query(queries.put, [id, idUser, idType], (error, results) => {
             if(error) throw error
             res.status(200).send("Ticket successfully updated")
@@ -35,6 +37,7 @@ const put = (req,res) => {
 
 const del = (req,res) => {
     const id = parseInt(req.params.id)
+    // eslint-disable-next-line no-unused-vars
     pool.query(queries.del, [id], (error, results) => {
         if(error) throw error
         res.status(200).send("Ticket successfully deleted")
@@ -43,6 +46,7 @@ const del = (req,res) => {
 
 const delRelated = (req,res) => {
     const id = parseInt(req.params.id)
+    // eslint-disable-next-line no-unused-vars
     pool.query(queries.delByUser, [id], (error, results) => {
         if(error) throw error
         res.status(200).send("Ticket(s) successfully deleted")

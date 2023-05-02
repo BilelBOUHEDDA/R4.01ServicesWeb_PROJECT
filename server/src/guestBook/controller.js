@@ -13,7 +13,8 @@ const post = (req,res) => {
     pool.query(queries.getByPk, [idUtilisateur, idProvider, horaire], (error, results) => {
         if(results.rowCount > 0)
             return res.status(409).send("Message already exist")
-        pool.query(queries.post, [idUtilisateur, idProvider, horaire, message, jaime], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.post, [idUtilisateur, idProvider, horaire, message, jaime], (error) => {
             if(error) throw error
             res.status(200).send("Message successfully created")
         })
@@ -25,13 +26,14 @@ const put = (req,res) => {
     let {message, jaime} = req.body;
 
     pool.query(queries.getByPk, [idUtilisateur, idProvider, horaire], (error, results) => {
-        if(results.rowCount == 0)
+        if(results.rowCount === 0)
             res.status(409).send("Message doesn't exist")
 
         message = typeof message == 'undefined' ? results.rows[0].message : message;
         jaime = typeof jaime == 'undefined' ? results.rows[0].jaime : jaime;
 
-        pool.query(queries.put, [idUtilisateur, idProvider, horaire, message, jaime], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.put, [idUtilisateur, idProvider, horaire, message, jaime], (error) => {
             if(error) throw error
             res.status(200).send("Message successfully updated")
         })
@@ -40,7 +42,8 @@ const put = (req,res) => {
 
 const del = (req,res) => {
     const {idUtilisateur, idProvider, horaire} = req.body;
-    pool.query(queries.del, [idUtilisateur, idProvider, horaire], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.del, [idUtilisateur, idProvider, horaire], (error) => {
         if(error) throw error
         res.status(200).send("Message successfully deleted")
     })
@@ -48,11 +51,13 @@ const del = (req,res) => {
 
 const delUser = (req,res) => {
     const id = parseInt(req.params.id);
-    pool.query(queries.delByProvider, [id], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.delByProvider, [id], (error) => {
         if(error) throw error
         res.status(200).send("Message(s) successfully deleted")
     }).then(
-        pool.query(queries.delByUser, [id], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.delByUser, [id], (error) => {
             if(error) throw error
             res.status(200).send("User can be successfully deleted")
         })

@@ -35,7 +35,8 @@ const post = (req,res) => {
     pool.query(queries.getByEmail, [email], (error, results) => {
         if(results.rowCount > 0)
             return res.status(409).send("User already exist")
-        pool.query(queries.post, [nom, email, codePostal, codeAuth, idType], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.post, [nom, email, codePostal, codeAuth, idType], (error) => {
             if(error) throw error
             res.status(200).send("User successfully created")
         })
@@ -46,7 +47,7 @@ const put = (req,res) => {
     let {nom, email, codePostal, codeAuth} = req.body;
     const id = parseInt(req.params.id)
     pool.query(queries.getById, [id], (error, results) => {
-        if(results.rowCount == 0)
+        if(results.rowCount === 0)
             res.status(409).send("User doesn't exist")
 
         nom = typeof nom == 'undefined' ? results.rows[0].nom : nom;
@@ -54,7 +55,8 @@ const put = (req,res) => {
         codePostal = typeof codePostal == 'undefined' ? results.rows[0].codepostal : codePostal;
         codeAuth = typeof codeAuth == 'undefined' ? results.rows[0].codeauth : codeAuth;
 
-        pool.query(queries.put, [nom, email, codePostal, codeAuth, id], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.put, [nom, email, codePostal, codeAuth, id], (error) => {
             if(error) throw error
             res.status(200).send("User successfully updated")
         })
@@ -63,7 +65,8 @@ const put = (req,res) => {
 
 const del = (req,res) => {
     const id = parseInt(req.params.id)
-    pool.query(queries.del, [id], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.del, [id], (error) => {
         if(error) return res.status(409).send("User can't be deleted because he's usefull")
         res.status(200).send("User successfully deleted")
     })

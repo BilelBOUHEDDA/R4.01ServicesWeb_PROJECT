@@ -1,15 +1,24 @@
 # Optimisation des performances
 
-## Project setup
+## Description
+```
+Notre projet consiste en la création d'un site web et d'une application mobile pour l'événement 
+de jeux-vidéo "Lion Esport", une compétition qui propose différents jeux connus tels que 
+League of Legends, Fifa ou encore Counter Strike Global Offensive.
+À ce projet, nous devions donc inclure plusieurs fonctionnalités regroupées en plusieurs 
+activités dont une commune.
+```
+
+### Project setup
 ```
 npm install
 crée un fichier .env
+ * DB_USER = "..."
+ * DB_HOST = "..."
+ * DB_NAME = "..."
+ * DB_PWD = "..."
 ```
 
-### Install autocannon
-```
-npm i autocannon -g
-```
 
 ### Compiles and hot-reloads for development
 ```
@@ -29,6 +38,16 @@ npm run back
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Contributors
+```
+BOUHEDDA Bilel
+FERNANDES Adrien
+FRECHIN Maxence
+GIRARD Mathéo
+TAGUIA Ayoub
+VAILLON Sofiane
 ```
 
 ### Customize configuration

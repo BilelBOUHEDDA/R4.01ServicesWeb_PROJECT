@@ -1,8 +1,7 @@
 // gère les actions pour s'inscrire et se connecter
 const pool = require("../config/db")
-const config = require("../config/auth.config");
 const queries = require("../src/login/queries");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 
@@ -16,7 +15,8 @@ exports.signup = (req, res) => {
             if (results.rowCount > 0) {
                 return res.status(409).send("User already exist");
             }
-            pool.query(queries.post, [nom, email, codeAuth, idType], (error, results) => {
+            // eslint-disable-next-line no-unused-vars
+            pool.query(queries.post, [nom, email, codeAuth, idType], (error) => {
                 if (error) throw error
                 res.status(200).send("User successfully created")
             })

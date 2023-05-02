@@ -2,6 +2,7 @@ const db = require("../config/db")
 const User = db.user;
 
 // Vérifier si l'email existe déjà
+// eslint-disable-next-line no-undef
 checkDuplicateUsername = (req, res, next) => {
     User.findOne({
         where: {
@@ -18,6 +19,7 @@ checkDuplicateUsername = (req, res, next) => {
     });
 };
 const verifySignUp = {
+    // eslint-disable-next-line no-undef
     checkDuplicateUsername: checkDuplicateUsername
 };
 module.exports = verifySignUp;

@@ -13,7 +13,8 @@ const post = (req,res) => {
     pool.query(queries.getByPk, [idUtilisateur, idProvider, horaire], (error, results) => {
         if(results.rowCount > 0)
             return res.status(409).send("Dedication already exist")
-        pool.query(queries.post, [idUtilisateur, idProvider, horaire], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.post, [idUtilisateur, idProvider, horaire], (error) => {
             if(error) throw error
             res.status(200).send("Dedication successfully created")
         })
@@ -22,7 +23,8 @@ const post = (req,res) => {
 
 const del = (req,res) => {
     const {idUtilisateur, idProvider, horaire} = req.body;
-    pool.query(queries.del, [idUtilisateur, idProvider, horaire], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.del, [idUtilisateur, idProvider, horaire], (error) => {
         if(error) throw error
         res.status(200).send("Dedication successfully deleted")
     })
@@ -30,7 +32,8 @@ const del = (req,res) => {
 
 const delRelated = (req,res) => {
     const id = parseInt(req.params.id);
-    pool.query(queries.del, [id], (error, results) => {
+    // eslint-disable-next-line no-unused-vars
+    pool.query(queries.del, [id], (error) => {
         if(error) throw error
         res.status(200).send("Dedication(s) successfully deleted")
     })

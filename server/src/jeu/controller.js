@@ -1,7 +1,7 @@
 const pool = require("../../config/db")
 const queries = require("./queries.js")
-const queriesCompo = require("../composition/queries")
-
+// eslint-disable-next-line no-unused-vars
+require("../composition/queries");
 const get = (req,res) => {
     pool.query(queries.get, (error, results) => {
         if(error) throw error
@@ -14,7 +14,8 @@ const post = (req,res) => {
     pool.query(queries.getByNom, [nom], (error, results) => {
         if(results.rowCount > 0)
             return res.status(409).send("Game already exist")
-        pool.query(queries.post, [nom], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.post, [nom], (error) => {
             if(error) throw error
             res.status(200).send("Game successfully created")
         })
@@ -25,11 +26,12 @@ const put = (req,res) => {
     let {nom} = req.body;
     const id = parseInt(req.params.id)
     pool.query(queries.getById, [id], (error, results) => {
-        if(results.rowCount == 0)
+        if(results.rowCount === 0)
             res.status(409).send("Game doesn't exist")
 
         // nom = typeof nom == 'undefined' ? results.rows[0].nom : nom;
-        pool.query(queries.put, [nom, id], (error, results) => {
+        // eslint-disable-next-line no-unused-vars
+        pool.query(queries.put, [nom, id], (error) => {
             if(error) throw error
             res.status(200).send("Game successfully updated")
         })
